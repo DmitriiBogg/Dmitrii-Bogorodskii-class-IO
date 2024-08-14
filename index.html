@@ -2,17 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="author" content="Dmitrii Bogorodskii" />
-    <meta
-      name="description"
-      content="It is a website for the final project in CTD"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dmitrii Bogorodskii/main</title>
-    <!--Links from my folders-->
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- start font library-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dmitrii Bogorodskii</title>
+    <!--***********************************************Other library's***********************************************-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -22,50 +14,17 @@
     <script
       src="https://kit.fontawesome.com/550d27a124.js"
       crossorigin="anonymous"
+      defer
     ></script>
-    <!-- end font library-->
+
+    <!--***********************************************My Folders***********************************************-->
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/app.js" defer></script>
   </head>
   <body>
-    <!--start navbar -->
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="messager.html">Connect</a></li>
-      </ul>
-    </nav>
-    <!--end navbar-->
-    <div class="container">
-      <!--start needs to change aria-->
-      <div class="left-content">
-        <h1>My name is Dmitrii and I LOVE programming!</h1>
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            class="fa fa-linkedin"
-          ></a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            class="fa-brands fa-github"
-          ></a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            class="fa fa-twitter"
-          ></a>
-        </div>
-      </div>
-      <div class="right-content">
-        <img src="image/test2.webp" alt="Dmitrii's photo" />
-      </div>
-    </div>
-  </body>
-  <footer class="footer">
-    <!--copyright start -->
-    <div class="copyright">
-      &copy; 2024 Dmitrii Bogorodskii
+    <!--***********************************************Header***********************************************-->
+    <header class="header">
+      <h1>My name is Dmitrii and I Love programming!</h1>
       <div class="social-icons">
         <a
           href="https://www.linkedin.com"
@@ -79,8 +38,138 @@
         ></a>
         <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
       </div>
-    </div>
-    <!--copyright end -->
-  </footer>
-  <!--and need to change the aria-->
+      <!--***********************************************Navbar***********************************************-->
+      <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+    </header>
+
+    <main class="main-container">
+      <!--***********************************************About***********************************************-->
+      <section class="section section__aboutMe">
+        <div id="about" class="aboutMe">
+          <h2>About Me:</h2>
+          <p>
+            I am a newcomer, with little knowledge, and I never imagined I would
+            become a programmer. I simply loved reading books, playing games,
+            and creating short videos set to beautiful music. But then I
+            discovered what I want to do for the rest of my life—creating my own
+            worlds, characters, stories, programs, and robots. That's why I am
+            determined to learn everything I need, no matter the challenges I
+            may face."
+          </p>
+          <div class="gallery">
+            <div class="card">
+                <img src="/image/test1.webp" alt="Image 1">
+            </div>
+            <div class="card">
+                <img src="/image/test2.webp" alt="Image 2">
+            </div>
+            <div class="card">
+                <img src="/image/test4.jpg" alt="Image 3">
+            </div>
+        </div>
+        </div>
+      </section>
+      <!--***********************************************Info***********************************************-->
+      <section class="section section__info">
+        <div id="experience" class="experience">
+          <h2>Experience:</h2>
+        </div>
+        <div id="skills" class="skills">
+          <h2>Skills:</h2>
+          <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="30%" style="max-width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="20%" style="max-width: 90"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="25%" style="max-width: 90"></div>
+            </div>
+          </div>
+        </div>
+        <div id="projects" class="projects"><h2>Projects:</h2></div>
+      </section>
+      <!--***********************************************Contacts***********************************************-->
+      <section id="contacts" class="contacts">
+        <h1 class="heading">Contact Me:</h1>
+
+        <div class="row">
+          <form action="">
+            <span>Name:</span>
+            <input
+              type="text"
+              name="name"
+              id=""
+              class="box"
+              required
+              placeholder="Enter Your name"
+              autocomplete="off"
+            />
+            <span>Email:</span>
+            <input
+              type="text"
+              name="email"
+              id=""
+              class="box"
+              required
+              placeholder="Enter Your email"
+              autocomplete="off"
+            />
+            <span>Phone number:</span>
+            <input
+              type="text"
+              name="number"
+              id=""
+              class="box"
+              required
+              placeholder="Enter Your number"
+              autocomplete="off"
+            />
+            <span>Message:</span>
+            <textarea
+              type="text"
+              name="text message"
+              id=""
+              class="box text-box"
+              required
+              placeholder="Enter Your text message"
+              autocomplete="off"
+            ></textarea>
+            <input type="submit" value="Send" class="btn" name="send" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <!--***********************************************Footer***********************************************-->
+    <footer class="footer">
+      <div class="copyright">&copy; 2024 Dmitrii Bogorodskii</div>
+      <div class="social-icons">
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          class="fa fa-linkedin"
+        ></a>
+        <a
+          href="https://github.com"
+          target="_blank"
+          class="fa-brands fa-github"
+        ></a>
+        <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
+      </div>
+    </footer>
+  </body>
 </html>
