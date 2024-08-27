@@ -3,7 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/*-------------------fonts--------------------*/
+h2 {
+  font-family: "Ga Maamli", sans-serif;
+}
+h3 {
+  font-family: "Baskervville SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 /*-------------------Header-------------------*/
 
 .header {
@@ -21,6 +29,8 @@
   margin: 0;
   font-size: 3rem;
   position: relative;
+  font-family: "Source Code Pro", monospace;
+  color: #333;
 }
 
 .navbar {
@@ -34,11 +44,13 @@
   color: #555;
   font-size: 1.2rem;
   padding: 0.5rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform-origin: center;
   border-radius: 0.5rem;
 }
 .navbar a:hover {
   color: #000;
+  transform: scale(1.5);
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -175,7 +187,7 @@
   content: attr(per);
   position: absolute;
   padding: 4px 6px;
-  background: #f1f1f1;
+  background: #f3f3f3;
   border-radius: 4px;
   font-size: 12px;
   top: -35px;
@@ -188,7 +200,7 @@
   position: absolute;
   width: 7px;
   height: 7px;
-  background: #f1f1f1;
+  background: #f3f3f3;
   top: -18px;
   right: 0;
   transform: translateX(50%) rotate(45deg);
@@ -204,49 +216,58 @@
     width: 100%;
   }
 }
-
-/*-------------------start section Contacts-------------------*/
-
+/*-------------------contacts-------------------*/
 .contacts {
-  position: relative;
-  padding: 2rem 9%;
   background-color: #333;
+}
+.contacts a {
   color: #f3f3f3;
 }
-.contacts .heading {
+.contacts a:hover {
+  color: #f3f3f3;
+}
+/*-------------------start section leaveMessage-------------------*/
+
+.leaveMessage {
+  position: relative;
+  padding: 2rem 9%;
+  background-color: #f0f0f0;
+  color: #333;
+}
+.leaveMessage .heading {
   text-align: center;
   margin-bottom: 2rem;
   font-size: (25px + (70 - 25) * ((100vw - 300px)/ (1600 - 300)));
 }
 
-.contacts .row {
+.leaveMessage .row {
   font-size: 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  color: #f3f3f3;
+  color: #333;
 }
-.contacts .row form {
+.leaveMessage .row form {
   flex: 1 1 40rem;
   padding: 2rem;
   border-radius: 0.5rem;
 }
 
-.contacts .row form .box {
+.leaveMessage .row form .box {
   width: 100%;
   margin: 1rem 0rem 2rem;
   border-radius: 0.5rem;
   padding: 0.8rem;
-  background: #333;
-  color: #f3f3f3;
+  background: #f0f0f0;
+  color: #333;
 }
-.contacts .row form .box.text-box {
+.leaveMessage .row form .box.text-box {
   height: 10rem;
 }
 
-.contacts .row form span {
-  color: #f3f3f3;
+.leaveMessage .row form span {
+  color: #333;
   font-size: (12px + (16 - 12) * ((100vw - 300px)/ (1600 - 300)));
 }
 
@@ -258,10 +279,88 @@
   transition: 0.3s;
 }
 .btn:hover {
-  color: rgb(0, 0, 0);
+  background-color: #333;
+  color: #f3f3f3;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
+}
+/*------------------Messages------------------*/
+.messages {
+  padding: 32px;
+  background-color: #f0f0f0;
+}
+.messages,
+h2 {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.messages ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.message-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  gap: 1rem;
+  max-width: 300px;
+  flex: 1 1 100%;
+}
+
+.message-name {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.message-text {
+  color: #333;
+  margin-bottom: 10px;
+}
+.message-item a {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+}
+.message-item p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.message-item button {
+  padding: 1rem 3rem;
+  border-radius: 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: flex-end;
+}
+
+.message-item button:hover {
+  background-color: #333;
+  color: #f3f3f3;
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 600px) {
+  .message-item {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
 /*-------------------Footer-------------------*/
 
 .footer {

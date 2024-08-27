@@ -6,12 +6,25 @@
     <title>Dmitrii Bogorodskii</title>
 
     <!--*****************Other library's*****************-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Baskervville+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMpqlh1+kGpqqb9M2AJK6sw9Jo+2QpNJbD3y4M"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <script
       src="https://kit.fontawesome.com/550d27a124.js"
@@ -51,11 +64,14 @@
       <!--*****************Navbar*****************-->
 
       <nav class="navbar">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contacts">Contacts</a>
+        <h2>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contacts">Contacts</a>
+          <a href="#leaveMessage">Leave Message</a>
+        </h2>
       </nav>
     </header>
 
@@ -67,15 +83,18 @@
       <section class="section section__aboutMe">
         <div id="about" class="aboutMe">
           <h2>About Me:</h2>
-          <p>
-            I am a newcomer, with little knowledge, and I never imagined I would
-            become a programmer. I simply loved reading books, playing games,
-            and creating short videos set to beautiful music. But then I
-            discovered what I want to do for the rest of my life—creating my own
-            worlds, characters, stories, programs, and robots. That's why I am
-            determined to learn everything I need, no matter the challenges I
-            may face."
-          </p>
+          <h3>
+            <p>
+              I am a newcomer, with little knowledge, and I never imagined I
+              would become a programmer. I simply loved reading books, playing
+              games, and creating short videos set to beautiful music. But then
+              I discovered what I want to do for the rest of my life—creating my
+              own worlds, characters, stories, programs, and robots. That's why
+              I am determined to learn everything I need, no matter the
+              challenges I may face.
+            </p>
+          </h3>
+
           <div class="gallery">
             <div class="card">
               <img src="/image/test1.webp" alt="Image 1" />
@@ -121,17 +140,38 @@
       </section>
 
       <!--*****************Contacts*****************-->
+      <section class="section contacts" id="contacts">
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            class="fa fa-linkedin"
+            ><h3>linkedin</h3></a
+          >
 
-      <section id="contacts" class="contacts">
-        <h1 class="heading">Contact Me:</h1>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="fa-brands fa-github"
+          >
+            <h3>github</h3></a
+          >
 
+          <a href="https://twitter.com" target="_blank" class="fa fa-twitter"
+            ><h3>twitter</h3></a
+          >
+        </div>
+      </section>
+      <!--*****************Leave message*****************-->
+
+      <section id="leaveMessage" class="leaveMessage">
+        <h1 class="heading">Leave message:</h1>
         <div class="row">
-          <form action="">
+          <form name="leave_message">
             <span>Name:</span>
             <input
               type="text"
-              name="name"
-              id=""
+              name="usersName"
               class="box"
               required
               placeholder="Enter Your name"
@@ -139,57 +179,30 @@
             />
             <span>Email:</span>
             <input
-              type="text"
-              name="email"
-              id=""
+              type="email"
+              name="usersEmail"
               class="box"
               required
               placeholder="Enter Your email"
               autocomplete="off"
             />
-            <span>Phone number:</span>
-            <input
-              type="text"
-              name="number"
-              id=""
-              class="box"
-              required
-              placeholder="Enter Your number"
-              autocomplete="off"
-            />
             <span>Message:</span>
             <textarea
-              type="text"
-              name="text message"
-              id=""
+              name="usersMessage"
               class="box text-box"
               required
-              placeholder="Enter Your text message"
+              placeholder="Enter Your message"
               autocomplete="off"
             ></textarea>
-            <input type="submit" value="Send" class="btn" name="send" />
+            <button type="submit" class="btn">Submit</button>
           </form>
         </div>
       </section>
+
+      <section class="messages" id="messages">
+        <h2>Messages:</h2>
+        <ul class="message-list"></ul>
+      </section>
     </main>
-
-    <!--*****************Footer*****************-->
-
-    <footer class="footer">
-      <div class="copyright">&copy; 2024 Dmitrii Bogorodskii</div>
-      <div class="social-icons">
-        <a
-          href="https://www.linkedin.com"
-          target="_blank"
-          class="fa fa-linkedin"
-        ></a>
-        <a
-          href="https://github.com"
-          target="_blank"
-          class="fa-brands fa-github"
-        ></a>
-        <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
-      </div>
-    </footer>
   </body>
 </html>
