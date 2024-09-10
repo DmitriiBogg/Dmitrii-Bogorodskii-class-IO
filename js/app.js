@@ -175,4 +175,30 @@ document.addEventListener("DOMContentLoaded", () => {
         projectSection.innerHTML = "<p>Can't load projects</p>";
       }
     });
+  // burger menu for windows size<768
+  document.getElementById("burger-menu").addEventListener("click", function () {
+    const navbarLinks = document.getElementById("navbar-links");
+    navbarLinks.classList.toggle("active");
+  });
+
+  // 'active' function for aboutMe/card
+  document.querySelectorAll(".card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      // check window size
+      if (window.innerWidth >= 768) {
+        // if ws >=768 then we start active function
+        if (card.classList.contains("active")) {
+          card.classList.remove("active");
+        } else {
+          document.querySelectorAll(".card").forEach(function (c) {
+            c.classList.remove("active");
+          });
+          card.classList.add("active");
+        }
+      } else {
+        // if ws < 768 then nothing happens
+        card.classList.remove("active");
+      }
+    });
+  });
 });

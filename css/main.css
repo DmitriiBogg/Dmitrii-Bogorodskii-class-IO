@@ -3,17 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 /*-------------------fonts--------------------*/
 h2 {
   font-family: "Ga Maamli", sans-serif;
+  margin-bottom: 15px;
 }
 h3 {
   font-family: "Baskervville SC", serif;
   font-weight: 400;
   font-style: normal;
 }
-/*-------------------Header-------------------*/
 
+/*-------------------Header-------------------*/
 .header {
   position: relative;
   display: flex;
@@ -25,6 +27,7 @@ h3 {
   background-color: #f0f0f0;
   text-align: center;
 }
+
 .header h1 {
   margin: 0;
   font-size: 3rem;
@@ -33,6 +36,24 @@ h3 {
   color: #333;
 }
 
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.social-icons a:hover {
+  color: #000;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
+}
 .navbar {
   display: flex;
   gap: 20px;
@@ -43,43 +64,33 @@ h3 {
   text-decoration: none;
   color: #555;
   font-size: 1.2rem;
-  padding: 0.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
   transform-origin: center;
-  border-radius: 0.5rem;
 }
+
 .navbar a:hover {
   color: #000;
-  transform: scale(1.5);
-  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.6);
+  border-color: #000;
 }
-
-.social-icons {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-.social-icons a {
+.navbar a:focus,
+.navbar a:active {
+  outline: none;
+  box-shadow: none;
   color: #555;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
 }
-.social-icons a:hover {
-  color: #000;
-  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
-}
-
 /*-------------------start section main-------------------*/
-
 .section {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
   color: #010001;
 }
@@ -88,6 +99,7 @@ h3 {
   background-color: #333;
   color: #f3f3f3;
   padding: 20px;
+  min-height: 80vh;
 }
 
 .section__info {
@@ -101,6 +113,7 @@ h3 {
   min-height: 100vh;
   overflow: hidden;
 }
+
 .aboutMe {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -113,10 +126,10 @@ h3 {
   font-size: 100px;
   background: url(/image/2.jpg);
   color: transparent;
-
   background-clip: text;
   animation: textBackgroundImageMoving 10s infinite linear;
 }
+
 @keyframes textBackgroundImageMoving {
   from {
     background-position: 0 0;
@@ -125,13 +138,23 @@ h3 {
     background-position: 100% 100%;
   }
 }
+.about-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  letter-spacing: 0.05rem;
+  color: #f3f3f3;
+  margin: 20px 0;
+  max-width: 800px;
+}
 
+/*-------------------Photo-------------------*/
 .gallery {
   display: flex;
   gap: 16px;
   justify-content: center;
   margin-top: 20px;
 }
+
 .card {
   width: 150px;
   height: 150px;
@@ -140,24 +163,67 @@ h3 {
   background-color: aliceblue;
   transition: transform 0.4s ease-in-out;
 }
+
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+/* --active function from JS-- */
+.card.active {
+  transform: scale(2.5);
+  border: 2px solid #e9f3f7;
+}
+
+.card.active img {
+  filter: brightness(0.5);
+}
+
+.card.active .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --unvisitable text-- */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /*--------------------------Seconde main Page--------------------------*/
-
 .experience,
 .skills,
 .projects {
   margin: 20px 0;
   width: 80%;
   max-width: 800px;
+}
+/*--------------------------Experience--------------------------*/
+.experience-info {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #202020;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  color: #f3f3f3;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 /*--------------------------Skills--------------------------*/
 .skill-name {
@@ -211,16 +277,18 @@ h3 {
   from {
     width: 0;
   }
-
   to {
     width: 100%;
   }
 }
+
 /*--------------------------Projects--------------------------*/
 #projects {
   margin: 40px 0;
 }
-
+#projects h2 {
+  background-color: #f3f3f3;
+}
 #projects ul {
   list-style: none;
   padding: 0;
@@ -261,26 +329,32 @@ h3 {
 /*-------------------contacts-------------------*/
 .contacts {
   background-color: #333;
+  min-height: 80vh;
+}
+.contacts h2 {
+  color: #f3f3f3;
 }
 .contacts a {
   color: #f3f3f3;
 }
+
 .contacts a:hover {
   color: #333;
   background-color: #f3f3f3;
 }
-/*-------------------start section leaveMessage-------------------*/
 
+/*-------------------start section leaveMessage-------------------*/
 .leaveMessage {
   position: relative;
   padding: 2rem 9%;
   background-color: #f0f0f0;
   color: #333;
 }
+
 .leaveMessage .heading {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: (25px + (70 - 25) * ((100vw - 300px)/ (1600 - 300)));
+  font-size: (25px + (70 - 25) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .leaveMessage .row {
@@ -291,6 +365,7 @@ h3 {
   gap: 1.5rem;
   color: #333;
 }
+
 .leaveMessage .row form {
   flex: 1 1 40rem;
   padding: 2rem;
@@ -305,13 +380,14 @@ h3 {
   background: #f0f0f0;
   color: #333;
 }
+
 .leaveMessage .row form .box.text-box {
   height: 10rem;
 }
 
 .leaveMessage .row form span {
   color: #333;
-  font-size: (12px + (16 - 12) * ((100vw - 300px)/ (1600 - 300)));
+  font-size: (12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .btn {
@@ -321,18 +397,20 @@ h3 {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .btn:hover {
   background-color: #333;
   color: #f3f3f3;
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
 }
+
 /*------------------Messages------------------*/
 .messages {
   padding: 32px;
   background-color: #f0f0f0;
 }
-.messages,
-h2 {
+
+.messages h2 {
   text-align: center;
   background-color: #f0f0f0;
   padding: 1rem;
@@ -355,12 +433,13 @@ h2 {
   align-items: flex-start;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   background-color: #f3f3f3;
   gap: 1rem;
   max-width: 300px;
   flex: 1 1 100%;
+
+  border: 5px double #02090d;
+  border-radius: 10px;
 }
 
 .message-name {
@@ -373,16 +452,22 @@ h2 {
 .message-text {
   color: #333;
   margin-bottom: 10px;
+  background-color: #f0f0f0;
 }
+
 .message-item a {
   color: #333;
   font-size: 20px;
   text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
 }
+
 .message-item p {
   font-size: 20px;
   margin-bottom: 10px;
 }
+
 .message-item button {
   padding: 1rem 3rem;
   border-radius: 1.5rem;
@@ -394,12 +479,11 @@ h2 {
 
 .message-item button:hover {
   background-color: #333;
-  color: #f35959;
+  color: #f51111e3;
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 /*-------------------Footer-------------------*/
-
 .footer {
   padding: 20px;
   text-align: center;
@@ -411,8 +495,7 @@ h2 {
   justify-content: center;
 }
 
-/*-------------------Media-------------------*/
-
+/*-------------------Media Queries-------------------*/
 @media (max-width: 768px) {
   .header {
     height: auto;
@@ -420,24 +503,37 @@ h2 {
   }
 
   .header h1 {
-    font-size: 2rem;
+    display: none; /* take off header h1 */
+  }
+  .social-icons {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
   }
 
   .navbar {
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
   }
 
-  .social-icons {
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
+  .navbar a {
+    font-size: 1.5rem;
   }
 
-  .navbar a,
-  .social-icons a {
-    font-size: 1rem;
+  .burger-menu {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  #navbar-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #navbar-links.active {
+    display: flex;
   }
 
   .section h2 {
@@ -447,12 +543,16 @@ h2 {
   .section p {
     font-size: 1rem;
   }
+
   .aboutMe,
   .experience,
   .skills,
   .projects {
     width: 90%;
     margin: 2rem;
+  }
+  .contacts .social-icons {
+    flex-direction: column;
   }
   .message-item {
     max-width: 100%;
