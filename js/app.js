@@ -129,3 +129,76 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   toggleMessageSection();
 });
+
+// Projects
+document.addEventListener("DOMContentLoaded", () => {
+  const githubName = "DmitriiBogg";
+  const apiUrl = `https://api.github.com/users/${githubName}/repos`;
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((repositories) => {
+      console.log(repositories);
+
+      const projectSection = document.getElementById("projects");
+      if (!projectSection) {
+        console.error('Element with ID "projects" not found');
+        return;
+      }
+
+      const projectList = projectSection.querySelector("ul");
+      if (!projectList) {
+        console.error('Element "ul" not found inside the "projects" section');
+        return;
+      }
+
+      projectList.innerHTML = "";
+
+      repositories.forEach((repo) => {
+        const project = document.createElement("li");
+
+        const projectLink = document.createElement("a");
+        projectLink.textContent = repo.name;
+        projectLink.href = repo.html_url;
+        projectLink.target = "_blank";
+        projectLink.classList.add("project-link");
+
+        project.appendChild(projectLink);
+        projectList.appendChild(project);
+      });
+    })
+    .catch((error) => {
+      console.error("Can't retrieve information", error);
+
+      const projectSection = document.getElementById("projects");
+      if (projectSection) {
+        projectSection.innerHTML = "<p>Can't load projects</p>";
+      }
+    });
+  // burger menu for windows size<768
+  document.getElementById("burger-menu").addEventListener("click", function () {
+    const navbarLinks = document.getElementById("navbar-links");
+    navbarLinks.classList.toggle("active");
+  });
+
+  // 'active' function for aboutMe/card
+  document.querySelectorAll(".card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      // check window size
+      if (window.innerWidth >= 768) {
+        // if ws >=768 then we start active function
+        if (card.classList.contains("active")) {
+          card.classList.remove("active");
+        } else {
+          document.querySelectorAll(".card").forEach(function (c) {
+            c.classList.remove("active");
+          });
+          card.classList.add("active");
+        }
+      } else {
+        // if ws < 768 then nothing happens
+        card.classList.remove("active");
+      }
+    });
+  });
+});

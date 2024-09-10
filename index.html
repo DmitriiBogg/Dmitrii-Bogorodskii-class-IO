@@ -59,12 +59,15 @@
           class="fa-brands fa-github"
         ></a>
         <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
+        <a href="https://gmail.com" target="_blank" class="fa fa-envelope"></a>
       </div>
 
       <!--*****************Navbar*****************-->
-
       <nav class="navbar">
-        <h2>
+        <!--burger menu-->
+        <div class="burger-menu" id="burger-menu">&#9776;</div>
+        <!--navbar-links-->
+        <h2 id="navbar-links">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
@@ -83,27 +86,36 @@
       <section class="section section__aboutMe">
         <div id="about" class="aboutMe">
           <h2>About Me:</h2>
-          <h3>
-            <p>
-              I am a newcomer, with little knowledge, and I never imagined I
-              would become a programmer. I simply loved reading books, playing
-              games, and creating short videos set to beautiful music. But then
-              I discovered what I want to do for the rest of my life—creating my
-              own worlds, characters, stories, programs, and robots. That's why
-              I am determined to learn everything I need, no matter the
-              challenges I may face.
-            </p>
-          </h3>
-
+          <p class="about-text">
+            I am a newcomer, with little knowledge, and I never imagined I would
+            become a programmer. I simply loved reading books, playing games,
+            and creating short videos set to beautiful music. But then I
+            discovered what I want to do for the rest of my life—creating my own
+            worlds, characters, stories, programs, and robots. That's why I am
+            determined to learn everything I need, no matter the challenges I
+            may face.
+          </p>
           <div class="gallery">
             <div class="card">
-              <img src="/image/test1.webp" alt="Image 1" />
+              <img src="/image/test1.webp" alt="My photo 1" loading="lazy" />
+              <div class="content">
+                <h3>Title</h3>
+                <p>Some text about i love.</p>
+              </div>
             </div>
             <div class="card">
-              <img src="/image/test2.webp" alt="Image 2" />
+              <img src="/image/test2.webp" alt="My photo 2" loading="lazy" />
+              <div class="content">
+                <h3>Title</h3>
+                <p>Some text about i love.</p>
+              </div>
             </div>
             <div class="card">
-              <img src="/image/test4.jpg" alt="Image 3" />
+              <img src="/image/test4.jpg" alt="My photo 3" loading="lazy" />
+              <div class="content">
+                <h3>Title</h3>
+                <p>Some text about i love.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -112,9 +124,15 @@
       <!--*****************Info*****************-->
 
       <section class="section section__info">
+        <!--*****************Experience*****************-->
         <div id="experience" class="experience">
           <h2>Experience:</h2>
+          <div class="experience-info">
+            Code The Dream Intro to Programming 2024
+          </div>
         </div>
+
+        <!--*****************Skills*****************-->
         <div id="skills" class="skills">
           <h2>Skills:</h2>
           <div class="skill">
@@ -136,17 +154,22 @@
             </div>
           </div>
         </div>
-        <div id="projects" class="projects"><h2>Projects:</h2></div>
+        <!--*****************Projects*****************-->
+        <div id="projects" class="projects">
+          <h2>Projects:</h2>
+          <ul></ul>
+        </div>
       </section>
 
       <!--*****************Contacts*****************-->
       <section class="section contacts" id="contacts">
+        <h2>Contact Me:</h2>
         <div class="social-icons">
           <a
             href="https://www.linkedin.com"
             target="_blank"
             class="fa fa-linkedin"
-            ><h3>linkedin</h3></a
+            ><h3>LinkedIn</h3></a
           >
 
           <a
@@ -154,18 +177,21 @@
             target="_blank"
             class="fa-brands fa-github"
           >
-            <h3>github</h3></a
+            <h3>Github</h3></a
           >
 
           <a href="https://twitter.com" target="_blank" class="fa fa-twitter"
-            ><h3>twitter</h3></a
+            ><h3>Twitter</h3></a
+          >
+          <a href="https://gmail.com" target="_blank" class="fa fa-envelope"
+            ><h3>Gmail</h3></a
           >
         </div>
       </section>
       <!--*****************Leave message*****************-->
 
       <section id="leaveMessage" class="leaveMessage">
-        <h1 class="heading">Leave message:</h1>
+        <h2 class="heading">Leave message:</h2>
         <div class="row">
           <form name="leave_message">
             <span>Name:</span>
@@ -198,7 +224,7 @@
           </form>
         </div>
       </section>
-
+      <!--*****************Messages*****************-->
       <section class="messages" id="messages">
         <h2>Messages:</h2>
         <ul class="message-list"></ul>
