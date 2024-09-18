@@ -26,6 +26,10 @@ h3 {
   height: 100vh;
   background-color: #f0f0f0;
   text-align: center;
+  background-image: url("/image/Default_A_muscular_strong_panda_standing_in_a_formal_suit_in_a_2_af87f201-30c4-49e4-9a98-76f5fc9c6a00_0.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header h1 {
@@ -42,17 +46,27 @@ h3 {
   margin-top: 20px;
 }
 
+.header h1,
+.navbar a,
 .social-icons a {
-  color: #555;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 5px;
 }
 
 .social-icons a:hover {
-  color: #000;
-  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
+  color: #f7f3f3;
+  transform: scale(1.3);
+  border-color: #f7f3f3;
 }
 .navbar {
   display: flex;
@@ -62,7 +76,6 @@ h3 {
 
 .navbar a {
   text-decoration: none;
-  color: #555;
   font-size: 1.2rem;
   padding: 5px 15px;
   border-radius: 50px;
@@ -73,10 +86,9 @@ h3 {
 }
 
 .navbar a:hover {
-  color: #000;
-  transform: scale(1.1);
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.6);
-  border-color: #000;
+  color: #f7f3f3;
+  transform: scale(1.3);
+  border-color: #f7f3f3;
 }
 .navbar a:focus,
 .navbar a:active {
@@ -124,10 +136,10 @@ h3 {
 
 .aboutMe h2 {
   font-size: 100px;
-  background: url(/image/2.jpg);
+  background: url(/image/3.jpg);
   color: transparent;
   background-clip: text;
-  animation: textBackgroundImageMoving 10s infinite linear;
+  animation: textBackgroundImageMoving 15s infinite linear;
 }
 
 @keyframes textBackgroundImageMoving {
@@ -339,8 +351,11 @@ h3 {
 }
 
 .contacts a:hover {
-  color: #333;
-  background-color: #f3f3f3;
+  background: rgb(71, 206, 255);
+  color: #050801;
+  box-shadow: 0 0 5px rgb(71, 206, 255), 0 0 25px rgb(71, 206, 255),
+    0 0 50px rgb(71, 206, 255), 0 0 200px rgb(71, 206, 255);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 /*-------------------start section leaveMessage-------------------*/
@@ -400,7 +415,7 @@ h3 {
 
 .btn:hover {
   background-color: #333;
-  color: #f3f3f3;
+  color: rgb(71, 206, 255);
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
 }
 
