@@ -50,7 +50,7 @@ h3 {
 .navbar a,
 .social-icons a {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.505);
   padding: 10px;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -76,7 +76,8 @@ h3 {
 
 .navbar a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.2px;
   padding: 5px 15px;
   border-radius: 50px;
   border: 2px solid transparent;
@@ -106,24 +107,17 @@ h3 {
   text-align: center;
   color: #010001;
 }
-
-.section__aboutMe {
-  background-color: #333;
-  color: #f3f3f3;
-  padding: 20px;
-  min-height: 80vh;
-}
-
-.section__info {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
 .main-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+}
+.section__aboutMe {
+  background-color: #333;
+  color: #f3f3f3;
+  padding: 20px;
+  min-height: 80vh;
 }
 
 .aboutMe {
@@ -218,6 +212,10 @@ h3 {
 }
 
 /*--------------------------Seconde main Page--------------------------*/
+.section__info {
+  background-color: #f0f0f0;
+  color: #333;
+}
 .experience,
 .skills,
 .projects {
@@ -231,6 +229,7 @@ h3 {
   padding: 10px;
   background: #202020;
   border-radius: 5px;
+  letter-spacing: 1px;
   transition: background 0.3s ease;
   color: #f3f3f3;
   font-size: 18px;
@@ -318,6 +317,7 @@ h3 {
 #projects li a {
   color: #f3f3f3;
   text-decoration: none;
+  letter-spacing: 1.5px;
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
@@ -342,19 +342,25 @@ h3 {
 .contacts {
   background-color: #333;
   min-height: 80vh;
+  background-image: url("/image/PandasContactMeBackGround.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .contacts h2 {
   color: #f3f3f3;
+  letter-spacing: 0.6px;
+  text-shadow: 2px 2px 4px rgba(125, 163, 177, 0.6);
 }
 .contacts a {
   color: #f3f3f3;
 }
 
 .contacts a:hover {
-  background: rgb(71, 206, 255);
+  background: rgb(180, 205, 214);
   color: #050801;
-  box-shadow: 0 0 5px rgb(71, 206, 255), 0 0 25px rgb(71, 206, 255),
-    0 0 50px rgb(71, 206, 255), 0 0 200px rgb(71, 206, 255);
+  box-shadow: 0 0 5px rgb(182, 206, 215), 0 0 25px rgb(162, 211, 227),
+    0 0 50px rgb(146, 189, 204), 0 0 200px rgb(176, 208, 220);
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
@@ -539,6 +545,9 @@ h3 {
     display: block;
     font-size: 2rem;
     cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
   }
 
   #navbar-links {
@@ -566,11 +575,19 @@ h3 {
     width: 90%;
     margin: 2rem;
   }
+  .contacts {
+    background-image: none;
+  }
   .contacts .social-icons {
     flex-direction: column;
   }
   .message-item {
     max-width: 100%;
     flex: 1 1 100%;
+  }
+}
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
   }
 }
